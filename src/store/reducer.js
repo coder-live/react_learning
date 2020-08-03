@@ -7,10 +7,11 @@ const defaultState= {
 };
 
 export default (state = defaultState, action) => {
-  // console.log(state)
+  // console.log('666',state)
   if(action.type === GET_DATA) {
     let newState= JSON.parse(JSON.stringify(state));
     newState.arr= action.data;
+    // console.log('111')
     return newState
   }
   if(action.type === CHANGE_INPUT) {

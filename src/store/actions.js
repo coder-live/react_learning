@@ -1,4 +1,5 @@
 import {GET_DATA, CHANGE_INPUT, ADD, DELETE} from './actionTypes';
+import axios from 'axios';
 
 export const getData= (data) => (
   {
@@ -23,3 +24,14 @@ export const handleDeleteAction= (index) => (
     index
   }
 )
+export const getTodoList= () => {
+  return (dispatch) => {
+    axios.get('http://localhost:3001/test').then(res=> {
+      // console.log(res);
+      let arr= res.data.data || [];
+      let action= getData(arr);
+      // console.log('00')
+      dispatch(action)
+    }).catch(_=>{console.log('请求失败')})
+  }
+}

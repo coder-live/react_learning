@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
-import axios from 'axios';
 import store from './store';
-import {getData, 
+import {getTodoList, 
   handleChangeAction, 
   handleAddAction, 
   handleDeleteAction
@@ -78,12 +77,10 @@ class TodoList extends PureComponent {
     this.getData();
   }
   getData() {
-    axios.get('http://localhost:3001/test').then(res=> {
-      console.log(res);
-      let arr= res.data.data || [];
-      let action= getData(arr);
-      store.dispatch(action)
-    }).catch(_=>{console.log('请求失败')})
+    let action = getTodoList();
+    // console.log('333')
+    store.dispatch(action)
+    // console.log('7333')
   }
 }
 export default TodoList;
