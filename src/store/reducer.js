@@ -14,6 +14,9 @@ export default (state = defaultState, action) => {
     // console.log('111')
     return newState
   }
+  // if(action.type === 'getMyList') {
+  //   // console.log('999')
+  // }
   if(action.type === CHANGE_INPUT) {
     let newState= {...state};
     newState.value= action.value;

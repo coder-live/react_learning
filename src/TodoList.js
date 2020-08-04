@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import store from './store';
-import {getTodoList, 
+import {getMyList, 
   handleChangeAction, 
   handleAddAction, 
   handleDeleteAction
@@ -77,7 +77,7 @@ class TodoList extends PureComponent {
     this.getData();
   }
   getData() {
-    let action = getTodoList();
+    let action = getMyList();
     // console.log('333')
     store.dispatch(action)
     // console.log('7333')
